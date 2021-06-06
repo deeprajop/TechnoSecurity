@@ -26,15 +26,15 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 
 PM_START_TEXT = """
-**Hello {}, My Name is {}!** 
-I am an **SUPERB**  group management bot.
+Hello {}, My Name is **Zer0Byte Group!** 
+I am Most Powerful group management bot.
 You can find the list of available commands with /help.
-Special thanks to @TechnoSecurityBot for helping in developing me.
+
 """
 
 HELP_STRINGS = """
 
-Hello! my name *{}*.
+Hello! my name is *{}*.
 
 *Main* commands available:
  - /start: start the bot
@@ -49,7 +49,7 @@ Hello! my name *{}*.
 And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-TECHNO_IMG = "https://telegra.ph/file/8be437d4365ef6fce405a.jpg"
+TECHNO_IMG = "https://telegra.ph/file/7a59c5605ee6b4c3fd602.jpg"
 IMPORTED = {}
 MIGRATEABLE = []
 HELPABLE = {}
@@ -139,14 +139,14 @@ def start(bot: Bot, update: Update, args: List[str]):
             update.effective_message.reply_photo(
                 TECHNO_IMG,
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
-                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🤝HELP🤝",
+                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🎯Help",
                                                                        callback_data="help_back".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="🧑‍💻My Creator🧑‍💻",
+                                                                                   InlineKeyboardButton(text="🌟Owner",
                                                                        url=f"tg://user?id{OWNER_ID}")],
-                                                                                   [InlineKeyboardButton(text="ADD TECHNO TO YOUR GROUP",
+                                                                                   [InlineKeyboardButton(text="✨ADD Zer0Byte Group TO YOUR GROUP",
                                                                        url="t.me/{}?startgroup=true".format(bot.username)),
-                                                                                   InlineKeyboardButton(text="Source Code",
-                                                                       url="https://github.com/Noob-gang/TechnoSecurity")
+                                                                                   InlineKeyboardButton(text="🗃Source Code",
+                                                                       url="https://telegra.ph/file/6d661cc458396796f4692.jpg")
                                                                                  ]]))
 
     else:
